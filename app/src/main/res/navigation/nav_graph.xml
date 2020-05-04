@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/accountsPage">
+
+    <fragment
+        android:id="@+id/createAccount"
+        android:name="com.example.ledger.pages.createAccount"
+        android:label="fragment_create_account"
+        tools:layout="@layout/fragment_create_account" >
+        <action
+            android:id="@+id/action_createAccount_to_accountsPage"
+            app:destination="@id/accountsPage"
+            app:popUpTo="@+id/createAccount"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/accountsPage"
+        android:name="com.example.ledger.pages.accountsPage"
+        android:label="accounts_page_fragment"
+        tools:layout="@layout/accounts_page_fragment" >
+        <action
+            android:id="@+id/action_accountsPage_to_createAccount"
+            app:destination="@id/createAccount"
+            app:popUpTo="@+id/accountsPage"
+            app:popUpToInclusive="true" />
+    </fragment>
+</navigation>
